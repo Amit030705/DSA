@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int maxSubarrayLength(vector<int>& nums, int k)
+int maxSubarrayLength(vector<int>& nums, int K)
 {
     unordered_map<int,int> m;
 
@@ -12,7 +12,7 @@ int maxSubarrayLength(vector<int>& nums, int k)
     {
         m[nums[j]]++;
 
-        while(m[nums[j]] > k)
+        while(m[nums[j]] > K)
         {
             m[nums[i]]--;
             i++;
@@ -28,9 +28,9 @@ int main()
 {
     vector<int> nums={1,2,1,2,1,2,1,2};
 
-    int k;
+    int K;
     cout<<"Enter k: ";
     cin>>k;
 
-    cout<<maxSubarrayLength(nums,k);
+    cout<<maxSubarrayLength(nums,K);
 }
